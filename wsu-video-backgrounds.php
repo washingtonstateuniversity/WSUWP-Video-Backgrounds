@@ -10,10 +10,24 @@ Author URI: http://web.wsu.edu
 
 class WSU_Video_Background {
 	/**
+	 * @var string Current version of the Javscript for cache breaking.
+	 */
+	var $script_version = '0.0.1';
+
+	/**
 	 * Setup plugin hooks.
 	 */
 	public function __construct() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_shortcode( 'wsu_video_background', array( $this, 'video_background' ) );
+	}
+
+	/**
+	 * Register the scripts used by the shortcode.
+	 */
+	public function enqueue_scripts() {
+		wp_register_script( 'wsu-videobg-jquery', plugins_url( 'js/jquery.videobg.js', __FILE__ ), array( 'jquery' ), $this->script_version, true );
+		wp_register_script( 'wsu-videobg', plugins_url( 'js/wsuwp-videobg.js', __FILE__ ), array( 'wsu-videobg-jquery' ), $this->script_version, true );
 	}
 
 	/**
@@ -49,6 +63,8 @@ class WSU_Video_Background {
 
 		$content = ob_get_contents();
 		ob_end_clean();
+
+		wp_enqueue_script( 'wsu-videobg' );
 
 		return $content;
 	}
