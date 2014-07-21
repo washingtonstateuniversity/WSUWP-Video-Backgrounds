@@ -64,6 +64,14 @@ class WSU_Video_Background {
 		$content = ob_get_contents();
 		ob_end_clean();
 
+		$wsu_video_background = array(
+			'id' => esc_attr( $atts['id'] ),
+			'mp4' => esc_url( $atts['mp4'] ),
+			'ogv' => esc_url( $atts['ogv'] ),
+			'webm' => esc_url( $atts['webm'] ),
+			'poster' => esc_url( $atts['poster'] ),
+		);
+		wp_localize_script( 'wsu-videobg', 'wsu_video_background', $wsu_video_background );
 		wp_enqueue_script( 'wsu-videobg' );
 
 		return $content;
