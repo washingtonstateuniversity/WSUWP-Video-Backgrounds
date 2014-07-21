@@ -1,0 +1,10 @@
+(function($){
+	$('#video-background').videoBG({
+		mp4:'',
+		ogv:'',
+		webm:'',
+		poster:'',
+		scale:true,
+		zIndex:0
+	});
+}(jQuery));
