@@ -70,6 +70,8 @@ class WSU_Video_Background {
 			'ogv' => esc_url( $atts['ogv'] ),
 			'webm' => esc_url( $atts['webm'] ),
 			'poster' => esc_url( $atts['poster'] ),
+			'scale' => (bool) $atts['scale'],
+			'zIndex' => intval( $atts['zIndex'] )
 		);
 		wp_localize_script( 'wsu-videobg', 'wsu_video_background', $wsu_video_background );
 		wp_enqueue_script( 'wsu-videobg' );
