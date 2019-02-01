@@ -223,13 +223,13 @@
 		if ($.fn.videoBG.supportsVideo()) {
 
 			// supports webm
-			if ($.fn.videoBG.supportType('webm')){
+			if ($.fn.videoBG.supportType('webm') && options.webm ){
 
 				// play webm
 				$video.attr('src',options.webm);
 			}
 			// supports mp4
-			else if ($.fn.videoBG.supportType('mp4')) {
+			else if ($.fn.videoBG.supportType('mp4') && options.mp4 ) {
 
 				// play mp4
 				$video.attr('src',options.mp4);
