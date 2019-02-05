@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WSUWP Video Backgrounds
-Version: 0.1.2
+Version: 0.1.3
 Plugin URI: http://web.wsu.edu
 Description: A WordPress plugin to display HTML5 video backgrounds.
 Author: washingtonstateuniversity, jeremyfelt
