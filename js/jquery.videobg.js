@@ -197,6 +197,7 @@
 				// if we have some loops to throw
 				if (loops_left) {
 					// replay that bad boy
+					v.muted = true;
 					v.play();
 				}
 
@@ -213,6 +214,7 @@
 
 			if (options.autoplay) {
 				// replay that bad boy
+				v.muted = true;
 				v.play();
 			}
 
@@ -281,6 +283,7 @@
 		}
 
 		if ($.fn.videoBG.supportsVideo()) {
+			v.muted = true;
 			v.play();
 		}
 		return $div;
